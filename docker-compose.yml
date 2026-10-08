@@ -1,0 +1,44 @@
+# Ollama is NOT in here by design: it runs on the host and the app container reaches it through
+# host.docker.internal. Host Ollama must listen on more than 127.0.0.1 (OLLAMA_HOST=0.0.0.0).
+services:
+  app:
+    build: .
+    user: "${HOST_UID:-1000}:${HOST_GID:-1000}"   # so files written to ./data belong to you
+    ports:
+      - "${APP_PORT:-8501}:8501"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # service-to-service addresses; these override anything in .env
+      OLLAMA_HOST: ${DOCKER_OLLAMA_HOST:-http://host.docker.internal:11434}
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://phoenix:6006
+      HOME: /tmp                                  # writable home for any uid (streamlit config)
+      PHOENIX_PUBLIC_URL: http://localhost:6006   # links shown in the UI are opened by your browser
+    extra_hosts:
+      - "host.docker.internal:host-gateway"       # makes the name work on Linux too
+    volumes:
+      - ./data:/app/data                          # run records, feedback db
+      - ./evals/results:/app/evals/results        # eval reports
+    depends_on:
+      phoenix:
+        condition: service_healthy
+    restart: unless-stopped
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    restart: unless-stopped
+    ports:
+      - "6006:6006"   # UI + OTLP/HTTP
+    volumes:
+      - phoenix_data:/mnt/data
+    environment:
+      - PHOENIX_WORKING_DIR=/mnt/data
+    healthcheck:
+      test: ["CMD", "/usr/bin/python3.13", "-c", "import urllib.request as u; u.urlopen('http://localhost:6006/')"]  # image has no shell
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  phoenix_data:

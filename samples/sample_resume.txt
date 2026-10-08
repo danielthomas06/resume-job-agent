@@ -1,0 +1,6 @@
+Asha Rao | asha.rao@example.com | +91 98765 43210 | github.com/asharao
+M.Tech, Data Science - IIT Hyderabad, 2024
+Experience
+ML Engineer, Acme Analytics (Jul 2024 - present): built RAG pipelines with LangChain and FAISS, deployed FastAPI services on AWS, fine-tuned BERT for ticket classification.
+Data Analyst, Zeta Corp (2021-2022): SQL, Tableau, Python dashboards.
+Skills: Python, PyTorch, LangChain, FastAPI, Docker, SQL, AWS

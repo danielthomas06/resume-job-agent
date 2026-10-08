@@ -1,0 +1,204 @@
+{
+  "provider": "ollama",
+  "model": "qwen2.5:7b",
+  "timestamp": "2026-10-07T19:34:31",
+  "pool": "all",
+  "n_jobs": 45,
+  "extraction": {
+    "ml_engineer": {
+      "skill_recall": 0.7777777777777778,
+      "ungrounded_skill_rate": 0.0,
+      "ungrounded_skills": [],
+      "seniority_ok": true,
+      "title_hit": true,
+      "missed_skills": [
+        "FAISS",
+        "BERT"
+      ]
+    },
+    "frontend_dev": {
+      "skill_recall": 1.0,
+      "ungrounded_skill_rate": 0.0,
+      "ungrounded_skills": [],
+      "seniority_ok": true,
+      "title_hit": true,
+      "missed_skills": []
+    },
+    "data_analyst": {
+      "skill_recall": 1.0,
+      "ungrounded_skill_rate": 0.0,
+      "ungrounded_skills": [],
+      "seniority_ok": true,
+      "title_hit": true,
+      "missed_skills": []
+    },
+    "devops_senior": {
+      "skill_recall": 1.0,
+      "ungrounded_skill_rate": 0.0,
+      "ungrounded_skills": [],
+      "seniority_ok": true,
+      "title_hit": true,
+      "missed_skills": []
+    },
+    "java_backend": {
+      "skill_recall": 1.0,
+      "ungrounded_skill_rate": 0.0,
+      "ungrounded_skills": [],
+      "seniority_ok": true,
+      "title_hit": true,
+      "missed_skills": []
+    }
+  },
+  "ranking": {
+    "ml_engineer": {
+      "embedding_only": {
+        "ndcg@5": 0.8652512718034021,
+        "ndcg@10": 0.8656571927045096
+      },
+      "prelim": {
+        "ndcg@5": 0.7693968268775774,
+        "ndcg@10": 0.8719429322917845
+      },
+      "full": {
+        "ndcg@5": 0.8932868997079265,
+        "ndcg@10": 0.9188166148330127
+      }
+    },
+    "frontend_dev": {
+      "embedding_only": {
+        "ndcg@5": 0.9213963208540731,
+        "ndcg@10": 0.9172574509596176
+      },
+      "prelim": {
+        "ndcg@5": 0.7163012699927473,
+        "ndcg@10": 0.8860257069626728
+      },
+      "full": {
+        "ndcg@5": 0.727463892412172,
+        "ndcg@10": 0.8779691652622673
+      }
+    },
+    "data_analyst": {
+      "embedding_only": {
+        "ndcg@5": 0.9088846169386638,
+        "ndcg@10": 0.9131740299538452
+      },
+      "prelim": {
+        "ndcg@5": 0.7652619595605827,
+        "ndcg@10": 0.9030891595894472
+      },
+      "full": {
+        "ndcg@5": 0.7713398810938545,
+        "ndcg@10": 0.9053918941338499
+      }
+    },
+    "devops_senior": {
+      "embedding_only": {
+        "ndcg@5": 0.766237668291564,
+        "ndcg@10": 0.7795828640642248
+      },
+      "prelim": {
+        "ndcg@5": 0.8399303495618898,
+        "ndcg@10": 0.8818456244095251
+      },
+      "full": {
+        "ndcg@5": 0.8453596772450142,
+        "ndcg@10": 0.8929661312025697
+      }
+    },
+    "java_backend": {
+      "embedding_only": {
+        "ndcg@5": 0.8076572091794476,
+        "ndcg@10": 0.8950653820168663
+      },
+      "prelim": {
+        "ndcg@5": 0.8613098738256916,
+        "ndcg@10": 0.7861302981335216
+      },
+      "full": {
+        "ndcg@5": 0.8076572091794476,
+        "ndcg@10": 0.78225103654691
+      }
+    }
+  },
+  "safety": {
+    "ml_engineer": {
+      "adversarial_in_top5": 0,
+      "adversarial_flagged": 2,
+      "adversarial_total": 2,
+      "benign_flagged": [
+        "h14"
+      ]
+    },
+    "frontend_dev": {
+      "adversarial_in_top5": 0,
+      "adversarial_flagged": 2,
+      "adversarial_total": 2,
+      "benign_flagged": [
+        "h14"
+      ]
+    },
+    "data_analyst": {
+      "adversarial_in_top5": 0,
+      "adversarial_flagged": 2,
+      "adversarial_total": 2,
+      "benign_flagged": [
+        "h14"
+      ]
+    },
+    "devops_senior": {
+      "adversarial_in_top5": 0,
+      "adversarial_flagged": 2,
+      "adversarial_total": 2,
+      "benign_flagged": [
+        "h14"
+      ]
+    },
+    "java_backend": {
+      "adversarial_in_top5": 0,
+      "adversarial_flagged": 2,
+      "adversarial_total": 2,
+      "benign_flagged": [
+        "h14"
+      ]
+    }
+  },
+  "grounding": {
+    "claims": 262,
+    "grounded_rate": 0.732824427480916
+  },
+  "judge": {
+    "n": 15,
+    "judge_model": "ollama:qwen2.5:14b-instruct",
+    "faithful_rate": 0.7333333333333333,
+    "corruption_detected_rate": 1,
+    "mean_helpfulness": 4.066666666666666
+  },
+  "summary": {
+    "skill_recall": 0.9555555555555556,
+    "ungrounded_skill_rate": 0.0,
+    "seniority_acc": 1,
+    "title_hit_rate": 1,
+    "extraction_failures": 0,
+    "ndcg@5[embedding_only]": 0.8538854174134302,
+    "ndcg@10[embedding_only]": 0.8741473839398127,
+    "ndcg@5[prelim]": 0.7904400559636978,
+    "ndcg@10[prelim]": 0.8658067442773902,
+    "ndcg@5[full]": 0.809021511927683,
+    "ndcg@10[full]": 0.8754789683957219,
+    "adversarial_in_top5": 0,
+    "adversarial_flagged_rate": 1.0,
+    "benign_false_flags": 5,
+    "judge_faithful_rate": 0.7333333333333333,
+    "judge_corruption_detected": 1,
+    "judge_helpfulness": 4.066666666666666,
+    "claim_grounded_rate": 0.732824427480916
+  },
+  "usage": {
+    "llm_calls": 55,
+    "input_tokens": 24594,
+    "output_tokens": 6862,
+    "llm_latency_s": 74.1,
+    "wall_s": 216.4
+  }
+}
